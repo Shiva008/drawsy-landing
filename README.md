@@ -18,14 +18,16 @@ npm install
 npm run dev
 ```
 
-Fill in `.env.local`:
+Copy variable names from [`.env.example`](.env.example) into `.env.local` (local) or your host’s environment (production). **Do not commit `.env` files** — the repo only ships `.env.example`.
 
-```env
-NEXT_PUBLIC_APP_URL=http://localhost:3000
-NEXT_PUBLIC_API_URL=https://your-api.example.com
-NEXT_PUBLIC_GOOGLE_AUTH_URL=https://your-api.example.com/auth/google
-NEXT_PUBLIC_TWITTER_AUTH_URL=https://your-api.example.com/auth/twitter
-```
+Marketing pages (`/`, `/companion`, `/pricing`, etc.) run without secrets; auth and billing API routes need `NEXT_PUBLIC_DRAWSY_FIREBASE_CONFIG` and `DRAWSY_BACKEND_URL`.
+
+## Deploy (Vercel)
+
+1. Import this repo in [Vercel](https://vercel.com/new).
+2. Framework preset: **Next.js** (default).
+3. Add the env vars from `.env.example` under **Project → Settings → Environment Variables** (you keep production values; collaborators use the same names).
+4. Deploy. Teammates push to GitHub; Vercel rebuilds on each push to the connected branch.
 
 ## Routes
 
