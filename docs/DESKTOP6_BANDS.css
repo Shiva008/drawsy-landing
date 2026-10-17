@@ -1,0 +1,35 @@
+/*
+ * Desktop-6 Figma reference (artboard 1440×15122)
+ * Kept for building remaining landing sections.
+ * Source: Figma Desktop-6 export (absolute positions).
+ *
+ * Key bands (top):
+ * 0        Hero Frame 32
+ * 1439     Audience title
+ * 1623     Audience cards
+ * 2312     Context Frame 14
+ * 3041     Information section
+ * 3990     Clarity Frame 18 (2890 tall)
+ * 7000     The Magic
+ * 7516     Magic Frame 63 demo
+ * 8260     What can you visualise?
+ * 8908     Companion bridge
+ * 9503     It's not an image canvas
+ * 10431    Bring your local AI (LocalAISection / Frame 112)
+ * 12265    Most AI vs Drawsy
+ * 13115    Conversation stays
+ * 14043    CTA Frame 26 + footer links
+ */
+
+/* Magic section absolute tops (artboard) for quick check:
+ * The Magic / Explain it.     top 7000  left 40 / 730
+ * Draw it.                    top 7111  left 730
+ * See it come alive.          top 7222  left 730
+ * Vector 28                   top 7260  left -99   1609×640 @ 0.3
+ * Body                        top 7340  left ~730  670
+ * Frame 63                    top 7516  left 40    1360×624
+ *   Frame 64 purple           right 0              670×624 #6B5FE0
+ *   Screenshot                left 108 top 108     1019×554
+ *   User's Example            left 275 top 265
+ *   Explain photosynthesis.   left 160 top 313
+ */

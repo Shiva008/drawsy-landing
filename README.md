@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Drawsy AI — Web (Auth Phase 01)
 
-## Getting Started
+Frontend-only Next.js app for Drawsy AI authentication. Auth APIs are owned by the backend team.
 
-First, run the development server:
+## Features
+
+- Email + password signup / login
+- Google + Twitter OAuth (redirect to backend URLs)
+- Forgot password / reset password
+- Shared brand + SEO config
+- Auth pages are `noindex, nofollow`
+
+## Setup
 
 ```bash
+cp .env.example .env.local
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Fill in `.env.local`:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```env
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+NEXT_PUBLIC_API_URL=https://your-api.example.com
+NEXT_PUBLIC_GOOGLE_AUTH_URL=https://your-api.example.com/auth/google
+NEXT_PUBLIC_TWITTER_AUTH_URL=https://your-api.example.com/auth/twitter
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Routes
 
-## Learn More
+| Path | Description |
+|------|-------------|
+| `/` | Marketing placeholder |
+| `/login` | Sign in |
+| `/signup` | Create account |
+| `/forgot-password` | Request reset link |
+| `/reset-password?token=` | Set new password |
 
-To learn more about Next.js, take a look at the following resources:
+## Docs
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+See [docs/AUTH_SPEC.md](docs/AUTH_SPEC.md) for flows, API contract, and analytics event names.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Remap backend paths in `src/lib/auth/api.ts` if your API differs from the assumed `/auth/*` routes.
